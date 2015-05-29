@@ -1,0 +1,16 @@
+import urllib2
+
+def fetch(url):
+    http_header={'User-Agent':'Chrome'}
+    http_request=urllib2.Request(url,None,http_header)
+
+    print 'Start downloading data...'
+    http_response=urllib2.urlopen(http_request)
+    print 'Finish downloading data...'
+
+    print http_response.code
+
+    print http_response.info()
+
+    print '--------Data--------'
+    print http_response.read()
